@@ -26,7 +26,7 @@ app.use('/login', login);
 app.use('/refresh', refresh);
 app.use('/logout', logout);
 
-app.use(verifyJWT);
+// app.use(verifyJWT);
 app.use('/api/product', product);
 
 mongoose.connection.once('open', () => {
