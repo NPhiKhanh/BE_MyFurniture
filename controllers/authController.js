@@ -25,7 +25,7 @@ const authHandler = async (req, res) => {
         )
         //Storing in database
         existUser.refreshToken = refreshToken;
-        const result = await existUser.save();
+        await existUser.save();
 
         res.cookie("jwt", refreshToken, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 })
         res.json({ "accessToken": accessToken })
